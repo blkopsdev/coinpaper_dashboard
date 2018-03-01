@@ -11,10 +11,14 @@
 |
 */
 Route::auth();
-Route::get('/', ['uses' => 'HomeController@home']);
+Route::get('/', function() {
+    return view('welcome');
+}
+    // ['uses' => 'HomeController@home']
+);
 Route::get('/home', function () {
-    //return view('welcome');
-    return redirect('/');
+    return view('welcome');
+    // return redirect('/');
 });
 Route::get('/admin', function () {
     //return view('welcome');

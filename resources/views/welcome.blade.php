@@ -1,104 +1,77 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>CoinPaper</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Sentinel::check())
-                        <a href="{{ url('/') }}">Home</a>
-                        {!! Form::open(['url' => url('logout'),'class'=>'form-inline']) !!}
-                           {!! csrf_field() !!}
-                          <button class="btn btn-primary btn-lg btn-block register-button" type="submit" >Logout</button>
-                       {!! Form::close() !!}
-                       
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel Starter page
-                    
-                </div>
-                @if (Sentinel::check() )
-                     Your name : {{Sentinel::getUser()->first_name}} <br>
-                     Last name : {{Sentinel::getUser()->last_name}} <br>
-                     E-mail : {{Sentinel::getUser()->email}} <br>
-                    @endif
-
-                <div class="links">
-                    <a href="https://github.com/roladn">GitHub</a>
-                    <a href="https://rolandalla.com/">Roland Alla</a>
-                    <a href="https://www.facebook.com/rolandalla91">Facebook</a>
-                </div>
-            </div>
-        </div>
-    </body>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Free Web tutorials on HTML and CSS">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200" rel="stylesheet">
+  <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/firstplace-4545/coinpaper/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/firstplace-4545/coinpaper/css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/firstplace-4545/coinpaper/css/jquery-ui.css">
+  <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/firstplace-4545/coinpaper/css/main.css">
+  <meta name="google-site-verification" content="Ntwq6xf3DmQB-uhEShIp81qV-BmgFPqj_Ru12cJynyk" />
+  <title>CoinPaper</title>
+  <style>
+    footer{
+      position: absolute;
+      bottom: 0;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class='overlay'></div>
+  <div class="wrap">
+    <nav>
+      <div class="nav-header">CoinPaper</div>
+      <ul class="links">
+        @if (Route::has('login'))
+          @if (Sentinel::check())
+            <a href="{{ url('/') }}">Home</a>
+            {!! Form::open(['url' => url('logout'),'class'=>'form-inline']) !!}
+              {!! csrf_field() !!}
+              <button class="btn btn-primary btn-lg btn-block register-button" type="submit" >Logout</button>
+            {!! Form::close() !!}
+          @else
+            <li class="navlink"><a href="{{ url('/') }}">Home</a></li>
+            <li class="navlink"><a href="{{ url('/login') }}">Login</a></li>
+            <li class="navlink"><a href="{{ url('/register') }}">Register</a></li>
+          @endif
+        @endif
+      </ul>
+      <button type="button" id="hamburgerToggle" class="btn btn-default" aria-label="">
+        <span class="fa fa-bars" aria-hidden="true"></span>
+      </button>
+    </nav>
+    <div class="hero-wrap">
+      <h1 class="hero-heading">Coinpaper Exchange</h1>
+      <div class="feature-hero">
+        <h1 class="title">CoinPaper Is Available By <strong>Private</strong> Invite Only</h1>
+        <h3 class="title2">If you want to buy cryptocurrencies please reach out to the person who invited you directly.</h3>
+      </div>
+    </div>
+    <div class="btn-ctn">
+      <button id="getstarted" class="main-btn">Contact</button>
+    </div>
+    <div class="moreinfo">
+      <div class="center-txt">
+        <h4 class="priceupdateheader">Current Price Of BitCoin</h4>
+        <p class="getappnow">Updated Every Minute - <span id="timer"></span></p>
+      </div>
+      <div class="center-txt links-ctn">
+        <h2 id="bitcoinPrice"></h2>
+      </div>
+    </div>
+  </div>
+  <footer>
+  <div class="txt-center">
+      <p class="footertext">&copy;2018 coinpaper.io v0.1.0</p>
+  </div>
+  </footer>
+  <script src="https://s3-us-west-1.amazonaws.com/firstplace-4545/coinpaper/js/jquery.js"></script>
+  <script src="https://s3-us-west-1.amazonaws.com/firstplace-4545/coinpaper/js/jquery-ui.js"></script>
+  <script src="https://s3-us-west-1.amazonaws.com/firstplace-4545/coinpaper/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="https://s3-us-west-1.amazonaws.com/firstplace-4545/coinpaper/js/main.js"></script>
+</body>
 </html>
