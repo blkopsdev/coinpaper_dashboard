@@ -44,3 +44,13 @@ input[type="password"] {
 .navbar-toggler {
   float: left;
 }
+.login-register {
+  text-align: center;
+  padding-top: 10px;
+}
+.login-register a:first-child {
+  padding-right: 20px;
+}
+.login-register a {
+  padding-left: 20px;
+}

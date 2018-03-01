@@ -28,7 +28,7 @@
 	                <span class="icon-bar"></span>
 	                <span class="icon-bar"></span>
 	            </button>
-	            <a class="navbar-brand" href="{{url('/')}}">Sarter Laravel 5.4</a>
+	            <a class="navbar-brand" href="{{url('/')}}">CoinPaper</a>
 	        </div>
 
 			<div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -52,10 +52,10 @@
 
 	<hr/>
 
-	<div class="container">
+	<!-- <div class="container">
 	    &copy; {{ date('Y') }}. Created by <a href="http://www.rolandalla.com">Roland Alla</a>
 	    <br/>
-	</div>
+	</div> -->
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
