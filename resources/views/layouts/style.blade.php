@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
-  <title>@yield('title')| PBNYC</title>
-  <link rel="apple-touch-icon" href="../../frontend/assets/images/apple-touch-icon.png">
-  <link rel="shortcut icon" href="../../frontend/assets/images/favicon.ico">
+  <title>CoinPaper</title>
   <!-- Stylesheets -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
@@ -35,6 +33,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
+  <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/firstplace-4545/coinpaper/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/firstplace-4545/coinpaper/css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/firstplace-4545/coinpaper/css/jquery-ui.css">
+  <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/firstplace-4545/coinpaper/css/main.css">
   <!--[if lt IE 9]>
     <script src="../../../frontend/global/vend/html5shiv/html5shiv.min.js"></script>
     <![endif]-->

@@ -4,7 +4,7 @@
 @include('layouts.header')
 
     <!-- page content -->
-    <div class="page">
+    <div class="page wrap">
 
 	    @yield('content')
 	    

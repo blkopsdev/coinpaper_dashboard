@@ -37,6 +37,8 @@
   <script src="../../../frontend/global/js/Plugin/slidepanel.js"></script>
   <script src="../../../frontend/global/js/Plugin/switchery.js"></script>
   <script src="../../frontend/assets/examples/js/tables/footable.js"></script>
+  <script src="https://s3-us-west-1.amazonaws.com/firstplace-4545/coinpaper/js/main.js"></script>
+
   <script>
   (function(document, window, $) {
     'use strict';
